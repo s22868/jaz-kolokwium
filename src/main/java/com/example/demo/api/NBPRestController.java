@@ -22,7 +22,7 @@ public class NBPRestController {
     @GetMapping("/{avg}")
     @ApiOperation(value = "Wyświetlenie użytkownikowi ilości walut które przekraczają podany kurs biorąc pod uwagę dane z przedziału od YYYY-MM-DD do YYYY-MM-DD")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "avg", value = "Powyżej jakiego kursu ma zliczyć ", required = true, dataType = "string", paramType = "path", example = "2"),
+            @ApiImplicitParam(name = "avg", value = "Powyżej jakiego kursu ma zliczyć ", required = true, dataType = "double", paramType = "path", example = "2"),
             @ApiImplicitParam(name = "from", value = "Date od - YYYY-MM-DD", required = false, dataType = "string"),
             @ApiImplicitParam(name = "to", value = "Date do - YYYY-MM-DD", required = false, dataType = "string")
 
