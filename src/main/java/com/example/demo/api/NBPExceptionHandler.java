@@ -21,7 +21,7 @@ public class NBPExceptionHandler extends ResponseEntityExceptionHandler {
             return handleExceptionInternal(ex, "brak danych",
                     new HttpHeaders(), HttpStatus.OK, request);
         } else if (ex.getStatusCode() == HttpStatus.BAD_REQUEST) {
-            return handleExceptionInternal(ex, ":(",
+            return handleExceptionInternal(ex, "niestety, bad request :(",
                     new HttpHeaders(), HttpStatus.NOT_FOUND, request);
         } else if (ex.getStatusCode() == HttpStatus.BAD_GATEWAY) {
             return handleExceptionInternal(ex, null,
