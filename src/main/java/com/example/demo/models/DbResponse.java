@@ -8,49 +8,49 @@ import java.time.LocalDateTime;
 
 @Entity
 public class DbResponse {
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private Long id;
-private Double avg;
-private Integer numberOfCurrencies;
-private String fromDate;
-private String toDate;
-private LocalDateTime createdAt = LocalDateTime.now();
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Double avg;
+    private Integer numberOfCurrencies;
+    private String fromDate;
+    private String toDate;
+    private LocalDateTime createdAt = LocalDateTime.now();
 
-public DbResponse() {
-        }
+    public DbResponse() {
+    }
 
-public DbResponse(Long id, Double avg, Integer numberOfCurrencies, String fromDate, String toDate, LocalDateTime createdAt) {
+    public DbResponse(Long id, Double avg, Integer numberOfCurrencies, String fromDate, String toDate, LocalDateTime createdAt) {
         this.id = id;
         this.avg = avg;
         this.numberOfCurrencies = numberOfCurrencies;
         this.fromDate = fromDate;
         this.toDate = toDate;
         this.createdAt = createdAt;
-        }
+    }
 
-public DbResponse(Double avg, Integer numberOfCurrencie, String fromDate, String toDate) {
+    public DbResponse(Double avg, Integer numberOfCurrencies, String fromDate, String toDate) {
         this.avg = avg;
         this.numberOfCurrencies = numberOfCurrencies;
         this.fromDate = fromDate;
         this.toDate = toDate;
-        }
+    }
 
-public Long getId() {
+    public Long getId() {
         return id;
-        }
+    }
 
-public void setId(Long id) {
+    public void setId(Long id) {
         this.id = id;
-        }
+    }
 
-public Double getAvg() {
+    public Double getAvg() {
         return avg;
-        }
+    }
 
-public void setAvg(Double avg) {
+    public void setAvg(Double avg) {
         this.avg = avg;
-        }
+    }
 
     public Integer getNumberOfCurrencies() {
         return numberOfCurrencies;
@@ -62,22 +62,22 @@ public void setAvg(Double avg) {
 
     public String getFromDate() {
         return fromDate;
-        }
+    }
 
-public void setFromDate(String fromDate) {
+    public void setFromDate(String fromDate) {
         this.fromDate = fromDate;
-        }
+    }
 
-public String getToDate() {
+    public String getToDate() {
         return toDate;
-        }
+    }
 
-public void setToDate(String toDate) {
+    public void setToDate(String toDate) {
         this.toDate = toDate;
-        }
+    }
 
-public LocalDateTime getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
-        }
+    }
 
-        }
+}
