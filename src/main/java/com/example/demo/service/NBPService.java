@@ -2,11 +2,14 @@ package com.example.demo.service;
 
 import com.example.demo.models.DbResponse;
 import com.example.demo.models.NBPResponse;
+import com.example.demo.models.Rate;
 import com.example.demo.repository.NBPRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 public class NBPService {
@@ -19,8 +22,14 @@ public class NBPService {
         this.nbpRepository = nbpRepository;
     }
 
-    public DbResponse midExchange(Double avg, String from, String to){
+    public DbResponse midExchange(Double avg, String from, String to) {
         List<NBPResponse> res = restTemplate.getForObject(url + "{from}/{to}?format=json", List.class, from, to);
+
+
+
+        List rates = res.stream().map(nr -> nr.getRates()).collect(Collectors.toList());
+        System.out.println(rates);
+
 
         Integer currNumber = 1;
 

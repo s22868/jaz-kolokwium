@@ -34,4 +34,13 @@ public class Rate {
     public void setMid(Double mid) {
         this.mid = mid;
     }
+
+    @Override
+    public String toString() {
+        return "Rate{" +
+                "currency='" + currency + '\'' +
+                ", code='" + code + '\'' +
+                ", mid=" + mid +
+                '}';
+    }
 }

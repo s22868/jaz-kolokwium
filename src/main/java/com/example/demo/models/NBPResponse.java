@@ -46,4 +46,14 @@ public class NBPResponse {
     public void setRates(List<Rate> rates) {
         this.rates = rates;
     }
+
+    @Override
+    public String toString() {
+        return "NBPResponse{" +
+                "table='" + table + '\'' +
+                ", no='" + no + '\'' +
+                ", effectiveDate='" + effectiveDate + '\'' +
+                ", rates=" + rates +
+                '}';
+    }
 }
