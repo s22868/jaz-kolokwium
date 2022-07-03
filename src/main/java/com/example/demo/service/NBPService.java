@@ -6,9 +6,10 @@ import com.example.demo.repository.NBPRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 @Service
 public class NBPService {
-    //    http://api.nbp.pl/api/exchangerates/rates/a/gbp/2012-01-01/2012-01-31/
     private final String url = "https://api.nbp.pl/api/exchangerates/tables/a/";
     private final RestTemplate restTemplate;
     private final NBPRepository nbpRepository;
@@ -19,7 +20,7 @@ public class NBPService {
     }
 
     public DbResponse midExchange(Double avg, String from, String to){
-        NBPResponse res = restTemplate.getForObject(url + "{from}/{to}?format=json", NBPResponse.class, from, to);
+        List<NBPResponse> res = restTemplate.getForObject(url + "{from}/{to}?format=json", List.class, from, to);
 
         Integer currNumber = 1;
 
