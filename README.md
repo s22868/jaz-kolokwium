@@ -1,0 +1,1 @@
+#nienawidze streamów w javie
